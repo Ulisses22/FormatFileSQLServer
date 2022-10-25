@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Now we define this file to work with the BCP command -->
+<BCPFORMAT xmlns="http://schemas.microsoft.com/sqlserver/2004/bulkload/format" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <RECORD>
+        <!-- Important: Attention when changing the TERMINATOR of some column! -->
+        <FIELD  ID="1" xsi:type="CharTerm" TERMINATOR="','"/>
+        <FIELD  ID="2" xsi:type="CharTerm" TERMINATOR="','"/>
+        <FIELD  ID="3" xsi:type="CharTerm" TERMINATOR="','"/>
+        <FIELD  ID="4" xsi:type="CharTerm" TERMINATOR="'\r\n'"/>
+    </RECORD>
+    <!-- Set column positions, column name, set data type in column and finally length -->
+    <ROW>
+        <COLUMN SOURCE="1" NAME="country"         xsi:type="SQLINT"/>
+        <COLUMN SOURCE="2" NAME="latitude"          xsi:type="SQLNVARCHAR"/>
+        <COLUMN SOURCE="3" NAME="longitude"      xsi:type="SQLNVARCHAR"/>
+        <COLUMN SOURCE="4" NAME="name"         xsi:type="SQLNVARCHAR"/>
+    </ROW>
+</BCPFORMAT>
